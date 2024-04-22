@@ -1,0 +1,37 @@
+doquedb.driver package
+======================
+
+Submodules
+----------
+
+doquedb.driver.connection module
+--------------------------------
+
+.. automodule:: doquedb.driver.connection
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+doquedb.driver.cursor module
+----------------------------
+
+.. automodule:: doquedb.driver.cursor
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+doquedb.driver.dbapi module
+---------------------------
+
+.. automodule:: doquedb.driver.dbapi
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: doquedb.driver
+   :members:
+   :undoc-members:
+   :show-inheritance:
