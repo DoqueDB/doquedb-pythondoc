@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>doquedb.driver package &mdash; py-doquedb 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=8d563738"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="doquedb.exception package" href="doquedb.exception.html" />
+    <link rel="prev" title="doquedb.common package" href="doquedb.common.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            py-doquedb
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="doquedb.html">doquedb package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="doquedb.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="doquedb.client.html">doquedb.client package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doquedb.common.html">doquedb.common package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">doquedb.driver package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doquedb.exception.html">doquedb.exception package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doquedb.port.html">doquedb.port package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doquedb.html#module-doquedb">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">py-doquedb</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">src</a></li>
+          <li class="breadcrumb-item"><a href="doquedb.html">doquedb package</a></li>
+      <li class="breadcrumb-item active">doquedb.driver package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/doquedb.driver.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="doquedb-driver-package">
+<h1>doquedb.driver package<a class="headerlink" href="#doquedb-driver-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-doquedb.driver.connection">
+<span id="doquedb-driver-connection-module"></span><h2>doquedb.driver.connection module<a class="headerlink" href="#module-doquedb.driver.connection" title="Link to this heading"></a></h2>
+<p>connection.py – DB-API 2.0 のコネクションクラス</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="doquedb.driver.connection.Connection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">doquedb.driver.connection.</span></span><span class="sig-name descname"><span class="pre">Connection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hostname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">portnum</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">protocol_ver</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="doquedb.client.html#doquedb.client.session.Session" title="doquedb.client.session.Session"><span class="pre">Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">master_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">charset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autocommit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#doquedb.driver.connection.Connection" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>DB-API 2.0 のコネクションクラス.
+特定のデータベースとの接続 (セッション) を表現します。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hostname</strong> (<em>str</em>) – ホスト名</p></li>
+<li><p><strong>portnum</strong> (<em>int</em>) – ポート番号</p></li>
+<li><p><strong>protocol_ver</strong> (<em>int</em>) – プロトコルバージョン</p></li>
+<li><p><strong>session</strong> (<a class="reference internal" href="doquedb.client.html#doquedb.client.session.Session" title="doquedb.client.session.Session"><em>Session</em></a>) – セッション</p></li>
+<li><p><strong>user</strong> (<em>str</em>) – ユーザー名</p></li>
+<li><p><strong>password</strong> (<em>str</em>) – パスワード</p></li>
+<li><p><strong>master_id</strong> (<em>int</em>) – マスターID</p></li>
+<li><p><strong>charset</strong> (<em>str</em>) – 文字セット</p></li>
+<li><p><strong>autocommit</strong> (<em>bool</em>) – オートコミットのオンオフ. デフォルトはFalse</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.driver.connection.Connection.info">
+<span class="sig-name descname"><span class="pre">info</span></span><a class="headerlink" href="#doquedb.driver.connection.Connection.info" title="Link to this definition"></a></dt>
+<dd><p>ホスト名、ポート番号、プロトコルバージョンのリスト</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.driver.connection.Connection._session">
+<span class="sig-name descname"><span class="pre">_session</span></span><a class="headerlink" href="#doquedb.driver.connection.Connection._session" title="Link to this definition"></a></dt>
+<dd><p>セッション</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="doquedb.client.html#doquedb.client.session.Session" title="doquedb.client.session.Session">Session</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.driver.connection.Connection.username">
+<span class="sig-name descname"><span class="pre">username</span></span><a class="headerlink" href="#doquedb.driver.connection.Connection.username" title="Link to this definition"></a></dt>
+<dd><p>ユーザー名</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.driver.connection.Connection.password">
+<span class="sig-name descname"><span class="pre">password</span></span><a class="headerlink" href="#doquedb.driver.connection.Connection.password" title="Link to this definition"></a></dt>
+<dd><p>パスワード</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.driver.connection.Connection.master_id">
+<span class="sig-name descname"><span class="pre">master_id</span></span><a class="headerlink" href="#doquedb.driver.connection.Connection.master_id" title="Link to this definition"></a></dt>
+<dd><p>マスターID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.driver.connection.Connection.charset">
+<span class="sig-name descname"><span class="pre">charset</span></span><a class="headerlink" href="#doquedb.driver.connection.Connection.charset" title="Link to this definition"></a></dt>
+<dd><p>文字セット</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.driver.connection.Connection.in_autocommit">
+<span class="sig-name descname"><span class="pre">in_autocommit</span></span><a class="headerlink" href="#doquedb.driver.connection.Connection.in_autocommit" title="Link to this definition"></a></dt>
+<dd><p>オートコミットのオンオフ</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.driver.connection.Connection.is_closed">
+<span class="sig-name descname"><span class="pre">is_closed</span></span><a class="headerlink" href="#doquedb.driver.connection.Connection.is_closed" title="Link to this definition"></a></dt>
+<dd><p>クローズしたかどうか</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.driver.connection.Connection.readonly">
+<span class="sig-name descname"><span class="pre">readonly</span></span><a class="headerlink" href="#doquedb.driver.connection.Connection.readonly" title="Link to this definition"></a></dt>
+<dd><p>読込み専用モードかどうか</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.driver.connection.Connection.in_transaction">
+<span class="sig-name descname"><span class="pre">in_transaction</span></span><a class="headerlink" href="#doquedb.driver.connection.Connection.in_transaction" title="Link to this definition"></a></dt>
+<dd><p>トランザクション中かどうか</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.driver.connection.Connection.isolation_level">
+<span class="sig-name descname"><span class="pre">isolation_level</span></span><a class="headerlink" href="#doquedb.driver.connection.Connection.isolation_level" title="Link to this definition"></a></dt>
+<dd><p>トランザクション遮断レベル</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.driver.connection.Connection.begin_transaction">
+<span class="sig-name descname"><span class="pre">begin_transaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transaction_mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.driver.connection.Connection.begin_transaction" title="Link to this definition"></a></dt>
+<dd><p>トランザクションを開始する.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>transaction_mode</strong> – <dl class="field-list simple">
+<dt class="field-odd">obj<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a href="#id1"><span class="problematic" id="id2">`</span></a>TransactionMode`内のいずれかのトランザクションモード</p>
+</dd>
+</dl>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>このメソッドは自動コミットモードが無効の時にのみ使用する.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">charset</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd><p>文字コードのゲッター.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.driver.connection.Connection.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.driver.connection.Connection.close" title="Link to this definition"></a></dt>
+<dd><p>セッションのクローズ</p>
+<p>自動解除を待たずにDoqueDBとのセッションのクローズ処理を直ちに行う。</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.driver.connection.Connection.commit">
+<span class="sig-name descname"><span class="pre">commit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.driver.connection.Connection.commit" title="Link to this definition"></a></dt>
+<dd><p>現在のトランザクションをコミットする.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="doquedb.html#doquedb.ProgrammingError" title="doquedb.ProgrammingError"><strong>ProgrammingError</strong></a> – プログラミングの誤りによって発生するエラー</p></li>
+<li><p><a class="reference internal" href="doquedb.html#doquedb.InterfaceError" title="doquedb.InterfaceError"><strong>InterfaceError</strong></a> – 通信プロトコル周りのエラー時に発生</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.driver.connection.Connection.cursor">
+<span class="sig-name descname"><span class="pre">cursor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prepared</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#doquedb.driver.cursor.Cursor" title="doquedb.driver.cursor.Cursor"><span class="pre">Cursor</span></a></span></span><a class="headerlink" href="#doquedb.driver.connection.Connection.cursor" title="Link to this definition"></a></dt>
+<dd><p>カーソルの生成</p>
+<p>データベース操作のためのカーソルオブジェクトを生成する</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>prepared</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em>) – プリペアードステートメント利用フラグ. デフォルトはFalse</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>カーソルオブジェクト</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#doquedb.driver.cursor.Cursor" title="doquedb.driver.cursor.Cursor">Cursor</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="doquedb.html#doquedb.ProgrammingError" title="doquedb.ProgrammingError"><strong>ProgrammingError</strong></a> – 複数のカーソルを作成しようとした場合に発生</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>カーソルはコネクションに対して１つしか作成できない。
+複数のカーソルを同時に作成したい場合はコネクションを新しく生成する必要がある。</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id3">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">in_transaction</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#id3" title="Link to this definition"></a></dt>
+<dd><p>トランザクションのオンオフのゲッター</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id4">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">info</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span></em><a class="headerlink" href="#id4" title="Link to this definition"></a></dt>
+<dd><p>接続情報（ホスト名, ポート番号, プロトコルバージョン）のタプル</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="doquedb.driver.connection.Connection.is_autocommit">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_autocommit</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#doquedb.driver.connection.Connection.is_autocommit" title="Link to this definition"></a></dt>
+<dd><p>オートコミットのオンオフのゲッター</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id5">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">isolation_level</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#id5" title="Link to this definition"></a></dt>
+<dd><p>“トランザクション遮断レベルのゲッター</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.driver.connection.Connection.isolevel">
+<span class="sig-name descname"><span class="pre">isolevel</span></span><a class="headerlink" href="#doquedb.driver.connection.Connection.isolevel" title="Link to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#doquedb.driver.connection.TransactionIsolationLevel" title="doquedb.driver.connection.TransactionIsolationLevel"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransactionIsolationLevel</span></code></a></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id6">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">master_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#id6" title="Link to this definition"></a></dt>
+<dd><p>マスターIDのゲッター</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.driver.connection.Connection.mode">
+<span class="sig-name descname"><span class="pre">mode</span></span><a class="headerlink" href="#doquedb.driver.connection.Connection.mode" title="Link to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#doquedb.driver.connection.TransactionMode" title="doquedb.driver.connection.TransactionMode"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransactionMode</span></code></a></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id7">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">password</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id7" title="Link to this definition"></a></dt>
+<dd><p>パスワードのゲッター</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id8">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">readonly</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#id8" title="Link to this definition"></a></dt>
+<dd><p>“読込み専用モードかどうか</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.driver.connection.Connection.rollback">
+<span class="sig-name descname"><span class="pre">rollback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.driver.connection.Connection.rollback" title="Link to this definition"></a></dt>
+<dd><p>現在のトランザクションをロールバックする.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="doquedb.exception.html#doquedb.exception.exceptions.InterfaceError" title="doquedb.exception.exceptions.InterfaceError"><strong>exceptions.InterfaceError</strong></a> – 通信プロトコル周りのエラー時に発生</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.driver.connection.Connection.set_readonly">
+<span class="sig-name descname"><span class="pre">set_readonly</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">readonly_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.driver.connection.Connection.set_readonly" title="Link to this definition"></a></dt>
+<dd><p>読込み専用モードをセットする.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>readonly</strong> (<em>bool</em>) – 読込み専用モードの設定値</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="doquedb.html#doquedb.ProgrammingError" title="doquedb.ProgrammingError"><strong>ProgrammingError</strong></a> – </p></li>
+<li><p><a class="reference internal" href="doquedb.exception.html#doquedb.exception.exceptions.UnexpectedError" title="doquedb.exception.exceptions.UnexpectedError"><strong>UnexpectedError</strong></a> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.driver.connection.Connection.set_transaction_isolation">
+<span class="sig-name descname"><span class="pre">set_transaction_isolation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isolation_level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.driver.connection.Connection.set_transaction_isolation" title="Link to this definition"></a></dt>
+<dd><p>トランザクション遮断レベルを指定されたものに変更する.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>isolation_level</strong> (<em>int</em>) – <dl class="field-list simple">
+<dt class="field-odd">obj<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a href="#id9"><span class="problematic" id="id10">`</span></a>TransactionIsolationLevel`内のいずれかの定数値</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="doquedb.html#doquedb.ProgrammingError" title="doquedb.ProgrammingError"><strong>ProgrammingError</strong></a> – </p></li>
+<li><p><a class="reference internal" href="doquedb.exception.html#doquedb.exception.exceptions.UnexpectedError" title="doquedb.exception.exceptions.UnexpectedError"><strong>UnexpectedError</strong></a> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id11">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">username</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id11" title="Link to this definition"></a></dt>
+<dd><p>ユーザー名のゲッター</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="doquedb.driver.connection.TransactionIsolationLevel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">doquedb.driver.connection.</span></span><span class="sig-name descname"><span class="pre">TransactionIsolationLevel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#doquedb.driver.connection.TransactionIsolationLevel" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<p>トランザクション遮断レベルの列挙型クラス</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.driver.connection.TransactionIsolationLevel.TRANSACTION_READ_COMMITTED">
+<span class="sig-name descname"><span class="pre">TRANSACTION_READ_COMMITTED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#doquedb.driver.connection.TransactionIsolationLevel.TRANSACTION_READ_COMMITTED" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.driver.connection.TransactionIsolationLevel.TRANSACTION_READ_UNCOMMITTED">
+<span class="sig-name descname"><span class="pre">TRANSACTION_READ_UNCOMMITTED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#doquedb.driver.connection.TransactionIsolationLevel.TRANSACTION_READ_UNCOMMITTED" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.driver.connection.TransactionIsolationLevel.TRANSACTION_REPEATABLE_READ">
+<span class="sig-name descname"><span class="pre">TRANSACTION_REPEATABLE_READ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#doquedb.driver.connection.TransactionIsolationLevel.TRANSACTION_REPEATABLE_READ" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.driver.connection.TransactionIsolationLevel.TRANSACTION_SERIALIZABLE">
+<span class="sig-name descname"><span class="pre">TRANSACTION_SERIALIZABLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#doquedb.driver.connection.TransactionIsolationLevel.TRANSACTION_SERIALIZABLE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.driver.connection.TransactionIsolationLevel.TRANSACTION_USING_SNAPSHOT">
+<span class="sig-name descname"><span class="pre">TRANSACTION_USING_SNAPSHOT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">256</span></em><a class="headerlink" href="#doquedb.driver.connection.TransactionIsolationLevel.TRANSACTION_USING_SNAPSHOT" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="doquedb.driver.connection.TransactionMode">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">doquedb.driver.connection.</span></span><span class="sig-name descname"><span class="pre">TransactionMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#doquedb.driver.connection.TransactionMode" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<p>トランザクションモードの列挙型クラス</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.driver.connection.TransactionMode.TRANSACTION_MODE_READ_ONLY">
+<span class="sig-name descname"><span class="pre">TRANSACTION_MODE_READ_ONLY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#doquedb.driver.connection.TransactionMode.TRANSACTION_MODE_READ_ONLY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.driver.connection.TransactionMode.TRANSACTION_MODE_READ_ONLY_USING_SNAPSHOT">
+<span class="sig-name descname"><span class="pre">TRANSACTION_MODE_READ_ONLY_USING_SNAPSHOT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#doquedb.driver.connection.TransactionMode.TRANSACTION_MODE_READ_ONLY_USING_SNAPSHOT" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.driver.connection.TransactionMode.TRANSACTION_MODE_READ_WRITE">
+<span class="sig-name descname"><span class="pre">TRANSACTION_MODE_READ_WRITE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#doquedb.driver.connection.TransactionMode.TRANSACTION_MODE_READ_WRITE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-doquedb.driver.cursor">
+<span id="doquedb-driver-cursor-module"></span><h2>doquedb.driver.cursor module<a class="headerlink" href="#module-doquedb.driver.cursor" title="Link to this heading"></a></h2>
+<p>cursor.py – DB-API 2.0 のカーソルクラス</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="doquedb.driver.cursor.Cursor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">doquedb.driver.cursor.</span></span><span class="sig-name descname"><span class="pre">Cursor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="doquedb.html#doquedb.Connection" title="doquedb.Connection"><span class="pre">Connection</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#doquedb.driver.cursor.Cursor" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>カーソルクラス.</p>
+<p>接続したデータベースとのセッションに対するカーソル機能を実装する.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">__connection</span> <span class="pre">(</span></span></dt>
+<dd><p>Obj: <cite>Connection</cite>): DB-APIのコネクションオブジェクト</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.driver.cursor.Cursor.arraysize">
+<span class="sig-name descname"><span class="pre">arraysize</span></span><a class="headerlink" href="#doquedb.driver.cursor.Cursor.arraysize" title="Link to this definition"></a></dt>
+<dd><p>fetchmany()で何行フェッチするかの設定変数. Defaults to １</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.driver.cursor.Cursor._rowcount">
+<span class="sig-name descname"><span class="pre">_rowcount</span></span><a class="headerlink" href="#doquedb.driver.cursor.Cursor._rowcount" title="Link to this definition"></a></dt>
+<dd><p>フェッチした結果に対するカーソルの位置. オペレーションがない場合は-1。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.driver.cursor.Cursor._description">
+<span class="sig-name descname"><span class="pre">_description</span></span><a class="headerlink" href="#doquedb.driver.cursor.Cursor._description" title="Link to this definition"></a></dt>
+<dd><p>フェッチした行のカラムごとの特性を表す７つのシーケンスを、カラム数の分だけ保持するリスト.
+オペレーションがない場合はNone.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.driver.cursor.Cursor.__metadata">
+<span class="sig-name descname"><span class="pre">__metadata</span></span><a class="headerlink" href="#doquedb.driver.cursor.Cursor.__metadata" title="Link to this definition"></a></dt>
+<dd><p>メタデータ</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.driver.cursor.Cursor.__resultset">
+<span class="sig-name descname"><span class="pre">__resultset</span></span><a class="headerlink" href="#doquedb.driver.cursor.Cursor.__resultset" title="Link to this definition"></a></dt>
+<dd><p>リザルトセット</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Optional[<a class="reference internal" href="doquedb.client.html#doquedb.client.resultset.ResultSet" title="doquedb.client.resultset.ResultSet">ResultSet</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id12">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">arraysize</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#id12" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.driver.cursor.Cursor.callproc">
+<span class="sig-name descname"><span class="pre">callproc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">procname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.driver.cursor.Cursor.callproc" title="Link to this definition"></a></dt>
+<dd><p>ストアドプロシージャを呼び出す.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>procname</strong> (<em>str</em>) – ストアドプロシージャ名</p></li>
+<li><p><strong>parameters</strong> (<em>list</em>) – 埋め込むパラメータのシーケンス.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="doquedb.html#doquedb.NotSupportedError" title="doquedb.NotSupportedError"><strong>NotSupportedError</strong></a> – サポート外のメソッド呼び出し時に発生</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>DoqueDBはストアドプロシージャをサポートしていない.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.driver.cursor.Cursor.cancel">
+<span class="sig-name descname"><span class="pre">cancel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.driver.cursor.Cursor.cancel" title="Link to this definition"></a></dt>
+<dd><p>実行をキャンセルする.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.driver.cursor.Cursor.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.driver.cursor.Cursor.close" title="Link to this definition"></a></dt>
+<dd><p>カーソルオブジェクトをクローズする.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="doquedb.driver.cursor.Cursor.description">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span></em><a class="headerlink" href="#doquedb.driver.cursor.Cursor.description" title="Link to this definition"></a></dt>
+<dd><p>カラムごとの特性を表す７つのシーケンスのリストのゲッター</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.driver.cursor.Cursor.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.driver.cursor.Cursor.execute" title="Link to this definition"></a></dt>
+<dd><p>オペレーションの実行メソッド.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>operation</strong> (<em>str</em>) – 実行するSQL文.</p></li>
+<li><p><strong>parameters</strong> (<em>Optional</em><em>[</em><em>Tuple</em><em>[</em><em>Any</em><em>]</em><em>]</em>) – SQL文に埋め込むパラメータのシーケンス.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="doquedb.html#doquedb.ProgrammingError" title="doquedb.ProgrammingError"><strong>ProgrammingError</strong></a> – paramstyleがqmark以外だった場合に発生</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.driver.cursor.Cursor.executemany">
+<span class="sig-name descname"><span class="pre">executemany</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param_sets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.driver.cursor.Cursor.executemany" title="Link to this definition"></a></dt>
+<dd><p>複数のオペレーションの実行メソッド.</p>
+<p>受け取ったシーケンスの数だけオペレーションを実行する。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>operation</strong> (<em>str</em>) – 実行するSQL文.</p></li>
+<li><p><strong>param_sets</strong> (<em>list</em>) – SQL文に埋め込むパラメータのシーケンスのシーケンス.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>テーブル(test_table)に対してインサートを２回行う場合の例</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;INSERT INTO test_table VALUES (?, ?, ?)&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">param_sets</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;MONA&#39;</span><span class="p">,</span> <span class="mi">3000</span><span class="p">),</span>　<span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;XP&#39;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">),]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">executemany</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">param_sets</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.driver.cursor.Cursor.fetchall">
+<span class="sig-name descname"><span class="pre">fetchall</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.driver.cursor.Cursor.fetchall" title="Link to this definition"></a></dt>
+<dd><p>残っているリザルトセットを全て取得する.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>取得した行のリスト. Defaults to None.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>rows (list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.driver.cursor.Cursor.fetchmany">
+<span class="sig-name descname"><span class="pre">fetchmany</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.driver.cursor.Cursor.fetchmany" title="Link to this definition"></a></dt>
+<dd><p>リザルトセットを複数行取得する.</p>
+<p>size に指定された数だけ結果をフェッチする. size が指定されなかった場合 .arraysize を参照する.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>size</strong> (<em>int</em><em>, </em><em>optional</em>) – 取得する行数. Defaults to None.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>取得した行のリスト.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>rows (list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.driver.cursor.Cursor.fetchone">
+<span class="sig-name descname"><span class="pre">fetchone</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.driver.cursor.Cursor.fetchone" title="Link to this definition"></a></dt>
+<dd><p>リザルトセットの次の行を取得する.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>取得した行. 取得する行がなくなった場合 None.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Optional[tuple]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="doquedb.driver.cursor.Cursor.is_closed">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_closed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#doquedb.driver.cursor.Cursor.is_closed" title="Link to this definition"></a></dt>
+<dd><p>カーソルを閉じたかどうか</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="doquedb.driver.cursor.Cursor.rowcount">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rowcount</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#doquedb.driver.cursor.Cursor.rowcount" title="Link to this definition"></a></dt>
+<dd><p>行番号のゲッター</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.driver.cursor.Cursor.setinputsize">
+<span class="sig-name descname"><span class="pre">setinputsize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sizes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.driver.cursor.Cursor.setinputsize" title="Link to this definition"></a></dt>
+<dd><p>.execute に渡すパラメータのためのメモリ領域を準備する.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sizes</strong> (<em>list</em>) – パラメータごとの型を保持するシーケンス.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="doquedb.html#doquedb.NotSupportedError" title="doquedb.NotSupportedError"><strong>NotSupportedError</strong></a> – サポート外のメソッド呼び出し時に発生</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>未実装</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.driver.cursor.Cursor.setoutputsize">
+<span class="sig-name descname"><span class="pre">setoutputsize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.driver.cursor.Cursor.setoutputsize" title="Link to this definition"></a></dt>
+<dd><p>サイズが大きいカラムのためにバッファーを定義する.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>size</strong> (<em>int</em>) – バッファーサイズ</p></li>
+<li><p><strong>column</strong> – バッファーを設定するカラム. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="doquedb.html#doquedb.NotSupportedError" title="doquedb.NotSupportedError"><strong>NotSupportedError</strong></a> – サポート外のメソッド呼び出し時に発生</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>未実装</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="doquedb.driver.cursor.CursorPrepared">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">doquedb.driver.cursor.</span></span><span class="sig-name descname"><span class="pre">CursorPrepared</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="doquedb.html#doquedb.Connection" title="doquedb.Connection"><span class="pre">Connection</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#doquedb.driver.cursor.CursorPrepared" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#doquedb.driver.cursor.Cursor" title="doquedb.driver.cursor.Cursor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cursor</span></code></a></p>
+<p>プリペアステートメントに対応したカーソルクラス.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.driver.cursor.CursorPrepared.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.driver.cursor.CursorPrepared.execute" title="Link to this definition"></a></dt>
+<dd><p>オペレーションの実行メソッド.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>operation</strong> (<em>str</em>) – 実行するSQL文.</p></li>
+<li><p><strong>parameters</strong> (<em>Optional</em><em>[</em><em>Tuple</em><em>[</em><em>Any</em><em>]</em><em>]</em>) – SQL文に埋め込むパラメータのシーケンス.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="doquedb.html#doquedb.ProgrammingError" title="doquedb.ProgrammingError"><strong>ProgrammingError</strong></a> – paramstyleがqmark以外だった場合に発生</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-doquedb.driver.dbapi">
+<span id="doquedb-driver-dbapi-module"></span><h2>doquedb.driver.dbapi module<a class="headerlink" href="#module-doquedb.driver.dbapi" title="Link to this heading"></a></h2>
+<p>dbapi.py – DB-API 2.0 (PEP-249) の型オブジェクトやコンストラクタの実装モジュール</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="doquedb.driver.dbapi.DateFromTicks">
+<span class="sig-prename descclassname"><span class="pre">doquedb.driver.dbapi.</span></span><span class="sig-name descname"><span class="pre">DateFromTicks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ticks</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#doquedb.driver.dbapi.DateFromTicks" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.driver.dbapi.ROWID">
+<span class="sig-prename descclassname"><span class="pre">doquedb.driver.dbapi.</span></span><span class="sig-name descname"><span class="pre">ROWID</span></span><a class="headerlink" href="#doquedb.driver.dbapi.ROWID" title="Link to this definition"></a></dt>
+<dd><p>コンストラクタ</p>
+<p>Binary (BINARY)
+Date (datetime.date)
+Time (datetime.time)
+TimeStamp (datetime.datetime)
+Language (LanguageData)
+Decimal (DecimalData)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="doquedb.driver.dbapi.TimeFromTicks">
+<span class="sig-prename descclassname"><span class="pre">doquedb.driver.dbapi.</span></span><span class="sig-name descname"><span class="pre">TimeFromTicks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ticks</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#doquedb.driver.dbapi.TimeFromTicks" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="doquedb.driver.dbapi.TimestampFromTicks">
+<span class="sig-prename descclassname"><span class="pre">doquedb.driver.dbapi.</span></span><span class="sig-name descname"><span class="pre">TimestampFromTicks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ticks</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#doquedb.driver.dbapi.TimestampFromTicks" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="doquedb.driver.dbapi.paramstyle">
+<span class="sig-prename descclassname"><span class="pre">doquedb.driver.dbapi.</span></span><span class="sig-name descname"><span class="pre">paramstyle</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'qmark'</span></em><a class="headerlink" href="#doquedb.driver.dbapi.paramstyle" title="Link to this definition"></a></dt>
+<dd><p>型オブジェクト</p>
+<p>STRING (str): データベースの文字列カラムの型
+BINARY (bytes):  データベースのバイナリカラムの型
+NUMBER (float)): データベースの数値カラムの型
+DATETIME (datetime.datetime): データベースの日付/時間カラムの型
+DECIMAL (DecimalData): データベースの”Decimal”カラムの型
+LANGUAGE (LanguageData): データベースの言語カラムの型
+WORD (WordData): データベースの単語タイプの索引の型
+ROWID (int): データベースの”Row ID”カラムの型</p>
+</dd></dl>
+
+</section>
+<section id="module-doquedb.driver">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-doquedb.driver" title="Link to this heading"></a></h2>
+<p>driver – DoqueDBアクセス用のドライバーパッケージ</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="doquedb.driver.connect_">
+<span class="sig-prename descclassname"><span class="pre">doquedb.driver.</span></span><span class="sig-name descname"><span class="pre">connect_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hostname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">portnum</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">charset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autocommit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#doquedb.driver.connection.Connection" title="doquedb.driver.connection.Connection"><span class="pre">Connection</span></a></span></span><a class="headerlink" href="#doquedb.driver.connect_" title="Link to this definition"></a></dt>
+<dd><p>DoqueDBと接続する.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hostname</strong> (<em>str</em>) – ホスト名</p></li>
+<li><p><strong>portnum</strong> (<em>int</em>) – ポート番号</p></li>
+<li><p><strong>dbname</strong> (<em>int</em>) – データベース名</p></li>
+<li><p><strong>charset</strong> (<em>str</em>) – 文字セット</p></li>
+<li><p><strong>autocommit</strong> (<em>bool</em>) – オートコミット. デフォルトはFalse</p></li>
+<li><p><strong>user</strong> (<em>str</em>) – ユーザー名</p></li>
+<li><p><strong>password</strong> (<em>str</em>) – パスワード</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Connectionオブジェクト</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="doquedb.html#doquedb.Connection" title="doquedb.Connection">Connection</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="doquedb.common.html" class="btn btn-neutral float-left" title="doquedb.common package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="doquedb.exception.html" class="btn btn-neutral float-right" title="doquedb.exception package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Ricoh Company, Ltd.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

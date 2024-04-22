@@ -1,0 +1,101 @@
+doquedb.common package
+======================
+
+Submodules
+----------
+
+doquedb.common.abstracts module
+-------------------------------
+
+.. automodule:: doquedb.common.abstracts
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+doquedb.common.arraydata module
+-------------------------------
+
+.. automodule:: doquedb.common.arraydata
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+doquedb.common.constants module
+-------------------------------
+
+.. automodule:: doquedb.common.constants
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+doquedb.common.data module
+--------------------------
+
+.. automodule:: doquedb.common.data
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+doquedb.common.instance module
+------------------------------
+
+.. automodule:: doquedb.common.instance
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+doquedb.common.iostream module
+------------------------------
+
+.. automodule:: doquedb.common.iostream
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+doquedb.common.language module
+------------------------------
+
+.. automodule:: doquedb.common.language
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+doquedb.common.scalardata module
+--------------------------------
+
+.. automodule:: doquedb.common.scalardata
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+doquedb.common.serialdata module
+--------------------------------
+
+.. automodule:: doquedb.common.serialdata
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+doquedb.common.serializable module
+----------------------------------
+
+.. automodule:: doquedb.common.serializable
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+doquedb.common.unicodestr module
+--------------------------------
+
+.. automodule:: doquedb.common.unicodestr
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: doquedb.common
+   :members:
+   :undoc-members:
+   :show-inheritance:

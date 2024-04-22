@@ -1,0 +1,77 @@
+doquedb.client package
+======================
+
+Submodules
+----------
+
+doquedb.client.connection module
+--------------------------------
+
+.. automodule:: doquedb.client.connection
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+doquedb.client.constants module
+-------------------------------
+
+.. automodule:: doquedb.client.constants
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+doquedb.client.datasource module
+--------------------------------
+
+.. automodule:: doquedb.client.datasource
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+doquedb.client.object module
+----------------------------
+
+.. automodule:: doquedb.client.object
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+doquedb.client.port module
+--------------------------
+
+.. automodule:: doquedb.client.port
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+doquedb.client.prepare\_statement module
+----------------------------------------
+
+.. automodule:: doquedb.client.prepare_statement
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+doquedb.client.resultset module
+-------------------------------
+
+.. automodule:: doquedb.client.resultset
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+doquedb.client.session module
+-----------------------------
+
+.. automodule:: doquedb.client.session
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: doquedb.client
+   :members:
+   :undoc-members:
+   :show-inheritance:

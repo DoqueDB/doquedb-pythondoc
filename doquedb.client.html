@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>doquedb.client package &mdash; py-doquedb 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=8d563738"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="doquedb.common package" href="doquedb.common.html" />
+    <link rel="prev" title="doquedb package" href="doquedb.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            py-doquedb
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="doquedb.html">doquedb package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="doquedb.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">doquedb.client package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doquedb.common.html">doquedb.common package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doquedb.driver.html">doquedb.driver package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doquedb.exception.html">doquedb.exception package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doquedb.port.html">doquedb.port package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doquedb.html#module-doquedb">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">py-doquedb</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">src</a></li>
+          <li class="breadcrumb-item"><a href="doquedb.html">doquedb package</a></li>
+      <li class="breadcrumb-item active">doquedb.client package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/doquedb.client.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="doquedb-client-package">
+<h1>doquedb.client package<a class="headerlink" href="#doquedb-client-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-doquedb.client.connection">
+<span id="doquedb-client-connection-module"></span><h2>doquedb.client.connection module<a class="headerlink" href="#module-doquedb.client.connection" title="Link to this heading"></a></h2>
+<p>connection.py – クライアントコネクション</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="doquedb.client.connection.Connection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">doquedb.client.connection.</span></span><span class="sig-name descname"><span class="pre">Connection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datasource</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#doquedb.client.datasource.DataSource" title="doquedb.client.datasource.DataSource"><span class="pre">DataSource</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#doquedb.client.port.Port" title="doquedb.client.port.Port"><span class="pre">Port</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#doquedb.client.connection.Connection" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#doquedb.client.object.Object" title="doquedb.client.object.Object"><code class="xref py py-class docutils literal notranslate"><span class="pre">Object</span></code></a></p>
+<p>クライアントコネクションクラス.</p>
+<p>サーバとのコネクションを管理する. サーバ側にはこのクライアントコネクション１つごとにスレッドが存在している.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.connection.Connection.begin_connection">
+<span class="sig-name descname"><span class="pre">begin_connection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#doquedb.client.connection.Connection" title="doquedb.client.connection.Connection"><span class="pre">Connection</span></a></span></span><a class="headerlink" href="#doquedb.client.connection.Connection.begin_connection" title="Link to this definition"></a></dt>
+<dd><p>新しいコネクションを得る.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>新しいコネクション</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#doquedb.client.connection.Connection" title="doquedb.client.connection.Connection">Connection</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.connection.Connection.begin_worker">
+<span class="sig-name descname"><span class="pre">begin_worker</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#doquedb.client.port.Port" title="doquedb.client.port.Port"><span class="pre">Port</span></a></span></span><a class="headerlink" href="#doquedb.client.connection.Connection.begin_worker" title="Link to this definition"></a></dt>
+<dd><p>ワーカを起動する.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>接続ポート</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#doquedb.client.port.Port" title="doquedb.client.port.Port">Port</a></p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="doquedb.exception.html#doquedb.exception.exceptions.UnexpectedError" title="doquedb.exception.exceptions.UnexpectedError"><strong>UnexpectedError</strong></a> – データソースから持ってきたポートが開放されていなかった場合</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>ポートプールにポートがない場合、slaveID=ANYとしてDoqueDBから返ってくるポートを使用する.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.connection.Connection.cancel_worker">
+<span class="sig-name descname"><span class="pre">cancel_worker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">worker_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.client.connection.Connection.cancel_worker" title="Link to this definition"></a></dt>
+<dd><p>ワーカをキャンセルする.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>worker_id</strong> (<em>int</em>) – キャンセルするワーカのID</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.connection.Connection.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.client.connection.Connection.close" title="Link to this definition"></a></dt>
+<dd><p>クローズする.</p>
+<p class="rubric">Notes</p>
+<p>このメソッドは例外を送出しない.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.connection.Connection.disconnect_port">
+<span class="sig-name descname"><span class="pre">disconnect_port</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slave_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="doquedb.common.html#doquedb.common.scalardata.IntegerData" title="doquedb.common.scalardata.IntegerData"><span class="pre">IntegerData</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.client.connection.Connection.disconnect_port" title="Link to this definition"></a></dt>
+<dd><p>使用しない通信ポートを切断する.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>slave_id</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – 切断するポートのスレーブIDのリスト</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.connection.Connection.is_database_available">
+<span class="sig-name descname"><span class="pre">is_database_available</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#doquedb.client.connection.Connection.is_database_available" title="Link to this definition"></a></dt>
+<dd><p>任意のデータベースの利用可能性を得る.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>データベースが利用可能な場合はTrue , 利用不可能な場合はFalse</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.connection.Connection.is_serever_available">
+<span class="sig-name descname"><span class="pre">is_serever_available</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#doquedb.client.connection.Connection.is_serever_available" title="Link to this definition"></a></dt>
+<dd><p>サーバの利用可能性を得る.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>サーバが利用可能な場合はTrue, 利用不可能な場合はFalse</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-doquedb.client.constants">
+<span id="doquedb-client-constants-module"></span><h2>doquedb.client.constants module<a class="headerlink" href="#module-doquedb.client.constants" title="Link to this heading"></a></h2>
+<p>constants.py – 定数を管理するモジュール.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="doquedb.client.constants.ProtocolVersion">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">doquedb.client.constants.</span></span><span class="sig-name descname"><span class="pre">ProtocolVersion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#doquedb.client.constants.ProtocolVersion" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<p>プロトコルバージョン管理用の列挙型クラス</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.constants.ProtocolVersion.CURRENT_PROTOCOL_VERSION">
+<span class="sig-name descname"><span class="pre">CURRENT_PROTOCOL_VERSION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#doquedb.client.constants.ProtocolVersion.CURRENT_PROTOCOL_VERSION" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.constants.ProtocolVersion.PROTOCOL_VERSION1">
+<span class="sig-name descname"><span class="pre">PROTOCOL_VERSION1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#doquedb.client.constants.ProtocolVersion.PROTOCOL_VERSION1" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.constants.ProtocolVersion.PROTOCOL_VERSION2">
+<span class="sig-name descname"><span class="pre">PROTOCOL_VERSION2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#doquedb.client.constants.ProtocolVersion.PROTOCOL_VERSION2" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.constants.ProtocolVersion.PROTOCOL_VERSION3">
+<span class="sig-name descname"><span class="pre">PROTOCOL_VERSION3</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#doquedb.client.constants.ProtocolVersion.PROTOCOL_VERSION3" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.constants.ProtocolVersion.PROTOCOL_VERSION4">
+<span class="sig-name descname"><span class="pre">PROTOCOL_VERSION4</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#doquedb.client.constants.ProtocolVersion.PROTOCOL_VERSION4" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.constants.ProtocolVersion.PROTOCOL_VERSION5">
+<span class="sig-name descname"><span class="pre">PROTOCOL_VERSION5</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#doquedb.client.constants.ProtocolVersion.PROTOCOL_VERSION5" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="doquedb.client.constants.StatusSet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">doquedb.client.constants.</span></span><span class="sig-name descname"><span class="pre">StatusSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#doquedb.client.constants.StatusSet" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
+<p>実行ステータス管理用の列挙型クラス</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.constants.StatusSet.CANCELED">
+<span class="sig-name descname"><span class="pre">CANCELED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#doquedb.client.constants.StatusSet.CANCELED" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.constants.StatusSet.DATA">
+<span class="sig-name descname"><span class="pre">DATA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#doquedb.client.constants.StatusSet.DATA" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.constants.StatusSet.END_OF_DATA">
+<span class="sig-name descname"><span class="pre">END_OF_DATA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#doquedb.client.constants.StatusSet.END_OF_DATA" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.constants.StatusSet.ERROR">
+<span class="sig-name descname"><span class="pre">ERROR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#doquedb.client.constants.StatusSet.ERROR" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.constants.StatusSet.HAS_MORE_DATA">
+<span class="sig-name descname"><span class="pre">HAS_MORE_DATA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em><a class="headerlink" href="#doquedb.client.constants.StatusSet.HAS_MORE_DATA" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.constants.StatusSet.META_DATA">
+<span class="sig-name descname"><span class="pre">META_DATA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#doquedb.client.constants.StatusSet.META_DATA" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.constants.StatusSet.SUCCESS">
+<span class="sig-name descname"><span class="pre">SUCCESS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#doquedb.client.constants.StatusSet.SUCCESS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.constants.StatusSet.UNDEFINED">
+<span class="sig-name descname"><span class="pre">UNDEFINED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#doquedb.client.constants.StatusSet.UNDEFINED" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-doquedb.client.datasource">
+<span id="doquedb-client-datasource-module"></span><h2>doquedb.client.datasource module<a class="headerlink" href="#module-doquedb.client.datasource" title="Link to this heading"></a></h2>
+<p>datasource.py – クライアントのデータソース</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">doquedb.client.datasource.</span></span><span class="sig-name descname"><span class="pre">DataSource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hostname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">portnum</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#doquedb.client.datasource.DataSource" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#doquedb.client.object.Object" title="doquedb.client.object.Object"><code class="xref py py-class docutils literal notranslate"><span class="pre">Object</span></code></a></p>
+<p>データソースクラス.</p>
+<p>クライアント側のデータソースをあらわすクラス. 接続に必要な情報を保持する.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hostname</strong> (<em>str</em>) – 接続先のホスト名</p></li>
+<li><p><strong>portnum</strong> (<em>int</em>) – ポート番号</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.__connection_list">
+<span class="sig-name descname"><span class="pre">__connection_list</span></span><a class="headerlink" href="#doquedb.client.datasource.DataSource.__connection_list" title="Link to this definition"></a></dt>
+<dd><p>コネクションのリスト</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.__connection_element">
+<span class="sig-name descname"><span class="pre">__connection_element</span></span><a class="headerlink" href="#doquedb.client.datasource.DataSource.__connection_element" title="Link to this definition"></a></dt>
+<dd><p>最近返したコネクションの要素番号</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.__portmap">
+<span class="sig-name descname"><span class="pre">__portmap</span></span><a class="headerlink" href="#doquedb.client.datasource.DataSource.__portmap" title="Link to this definition"></a></dt>
+<dd><p>ポートのハッシュマップ(辞書)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.__expunge_port">
+<span class="sig-name descname"><span class="pre">__expunge_port</span></span><a class="headerlink" href="#doquedb.client.datasource.DataSource.__expunge_port" title="Link to this definition"></a></dt>
+<dd><p>クライアントが廃棄したポート</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.__hostname">
+<span class="sig-name descname"><span class="pre">__hostname</span></span><a class="headerlink" href="#doquedb.client.datasource.DataSource.__hostname" title="Link to this definition"></a></dt>
+<dd><p>接続先のホスト名</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.__portnumber">
+<span class="sig-name descname"><span class="pre">__portnumber</span></span><a class="headerlink" href="#doquedb.client.datasource.DataSource.__portnumber" title="Link to this definition"></a></dt>
+<dd><p>ポート番号</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.__protocol_ver">
+<span class="sig-name descname"><span class="pre">__protocol_ver</span></span><a class="headerlink" href="#doquedb.client.datasource.DataSource.__protocol_ver" title="Link to this definition"></a></dt>
+<dd><p>プロトコルバージョン</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.__sessionmap">
+<span class="sig-name descname"><span class="pre">__sessionmap</span></span><a class="headerlink" href="#doquedb.client.datasource.DataSource.__sessionmap" title="Link to this definition"></a></dt>
+<dd><p>セッションのハッシュマップ(辞書)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.__is_closed">
+<span class="sig-name descname"><span class="pre">__is_closed</span></span><a class="headerlink" href="#doquedb.client.datasource.DataSource.__is_closed" title="Link to this definition"></a></dt>
+<dd><p>クローズしたかどうか</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.__masterID">
+<span class="sig-name descname"><span class="pre">__masterID</span></span><a class="headerlink" href="#doquedb.client.datasource.DataSource.__masterID" title="Link to this definition"></a></dt>
+<dd><p>マスターID(=プロトコルバージョン)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.__authorization">
+<span class="sig-name descname"><span class="pre">__authorization</span></span><a class="headerlink" href="#doquedb.client.datasource.DataSource.__authorization" title="Link to this definition"></a></dt>
+<dd><p>認証方式</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.CHECK_CONNECTION_POOL_PERIOD">
+<span class="sig-name descname"><span class="pre">CHECK_CONNECTION_POOL_PERIOD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">60000</span></em><a class="headerlink" href="#doquedb.client.datasource.DataSource.CHECK_CONNECTION_POOL_PERIOD" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.CONNECTION_THRESHOLD">
+<span class="sig-name descname"><span class="pre">CONNECTION_THRESHOLD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">20</span></em><a class="headerlink" href="#doquedb.client.datasource.DataSource.CONNECTION_THRESHOLD" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.DATABASE_ALL">
+<span class="sig-name descname"><span class="pre">DATABASE_ALL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4294967295</span></em><a class="headerlink" href="#doquedb.client.datasource.DataSource.DATABASE_ALL" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.MAXIMUM_CONNECTION_POOL_COUNT">
+<span class="sig-name descname"><span class="pre">MAXIMUM_CONNECTION_POOL_COUNT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">100</span></em><a class="headerlink" href="#doquedb.client.datasource.DataSource.MAXIMUM_CONNECTION_POOL_COUNT" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.TIME_UNIT">
+<span class="sig-name descname"><span class="pre">TIME_UNIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">500</span></em><a class="headerlink" href="#doquedb.client.datasource.DataSource.TIME_UNIT" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.authorization">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">authorization</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#doquedb.client.datasource.DataSource.authorization" title="Link to this definition"></a></dt>
+<dd><p>認証方式のゲッター.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.client.datasource.DataSource.close" title="Link to this definition"></a></dt>
+<dd><p>データソースをクローズする.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.create_session">
+<span class="sig-name descname"><span class="pre">create_session</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#doquedb.client.session.Session" title="doquedb.client.session.Session"><span class="pre">Session</span></a></span></span><a class="headerlink" href="#doquedb.client.datasource.DataSource.create_session" title="Link to this definition"></a></dt>
+<dd><p>新しくセッションを作成する.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dbname</strong> (<em>str</em>) – データベース名</p></li>
+<li><p><strong>username</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – ユーザー名</p></li>
+<li><p><strong>password</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – パスワード</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="doquedb.exception.html#doquedb.exception.exceptions.UnexpectedError" title="doquedb.exception.exceptions.UnexpectedError"><strong>UnexpectedError</strong></a> – クライアントコネクションが取得できなかった場合</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.expunge_port">
+<span class="sig-name descname"><span class="pre">expunge_port</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#doquedb.client.port.Port" title="doquedb.client.port.Port"><span class="pre">Port</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.client.datasource.DataSource.expunge_port" title="Link to this definition"></a></dt>
+<dd><p>廃棄したポートを登録する.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>port</strong> (<a class="reference internal" href="#doquedb.client.port.Port" title="doquedb.client.port.Port"><em>Port</em></a>) – 廃棄するポート</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.get_client_connection">
+<span class="sig-name descname"><span class="pre">get_client_connection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#doquedb.client.connection.Connection" title="doquedb.client.connection.Connection"><span class="pre">Connection</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.client.datasource.DataSource.get_client_connection" title="Link to this definition"></a></dt>
+<dd><p>コネクション管理クラスを得る.</p>
+<p>ラウンドロビン方式でコネクション管理クラスを入手する.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>コネクション管理クラス</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="doquedb.html#doquedb.Connection" title="doquedb.Connection">Connection</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.is_database_available">
+<span class="sig-name descname"><span class="pre">is_database_available</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#doquedb.client.datasource.DataSource.is_database_available" title="Link to this definition"></a></dt>
+<dd><p>任意のデータベースの利用可能性を得る.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>データベースが利用可能な場合はTrue , 利用不可能な場合はFalse</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.is_server_available">
+<span class="sig-name descname"><span class="pre">is_server_available</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#doquedb.client.datasource.DataSource.is_server_available" title="Link to this definition"></a></dt>
+<dd><p>サーバの利用可能性を得る.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>サーバが利用可能な場合はTrue, 利用不可能な場合はFalse</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.master_id">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">master_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#doquedb.client.datasource.DataSource.master_id" title="Link to this definition"></a></dt>
+<dd><p>マスターIDのゲッター</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.new_client_connection">
+<span class="sig-name descname"><span class="pre">new_client_connection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.client.datasource.DataSource.new_client_connection" title="Link to this definition"></a></dt>
+<dd><p>セッション数がCONNECTION_THRESHOLDを越えた場合に、
+新しいクライアントコネクションを作成する.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.new_port">
+<span class="sig-name descname"><span class="pre">new_port</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slave_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#doquedb.client.port.Port" title="doquedb.client.port.Port"><span class="pre">Port</span></a></span></span><a class="headerlink" href="#doquedb.client.datasource.DataSource.new_port" title="Link to this definition"></a></dt>
+<dd><p>新しいポートのインスタンスを得る</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>slave_id</strong> (<em>int</em>) – スレーブID</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>新しいポートインスタンス</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#doquedb.client.port.Port" title="doquedb.client.port.Port">Port</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">protocol_ver</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.client.datasource.DataSource.open" title="Link to this definition"></a></dt>
+<dd><p>データソースをオープンする.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>protocol_ver</strong> (<em>int</em>) – プロトコルバージョン</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.pop_port">
+<span class="sig-name descname"><span class="pre">pop_port</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#doquedb.client.port.Port" title="doquedb.client.port.Port"><span class="pre">Port</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.client.datasource.DataSource.pop_port" title="Link to this definition"></a></dt>
+<dd><p>ポートプールからポートを取り出す.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ポートプールから受け取ったポート</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#doquedb.client.port.Port" title="doquedb.client.port.Port">Port</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.push_port">
+<span class="sig-name descname"><span class="pre">push_port</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#doquedb.client.port.Port" title="doquedb.client.port.Port"><span class="pre">Port</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.client.datasource.DataSource.push_port" title="Link to this definition"></a></dt>
+<dd><p>ポートプールにポートを挿入する.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>port</strong> (<a class="reference internal" href="#doquedb.client.port.Port" title="doquedb.client.port.Port"><em>Port</em></a>) – ポート</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.remove_session">
+<span class="sig-name descname"><span class="pre">remove_session</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.client.datasource.DataSource.remove_session" title="Link to this definition"></a></dt>
+<dd><p>セッションを削除する.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.session_exist">
+<span class="sig-name descname"><span class="pre">session_exist</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#doquedb.client.datasource.DataSource.session_exist" title="Link to this definition"></a></dt>
+<dd><p>セッションが存在しているかどうか</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>存在している場合True, それ以外はFalse</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.datasource.DataSource.shutdown">
+<span class="sig-name descname"><span class="pre">shutdown</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.client.datasource.DataSource.shutdown" title="Link to this definition"></a></dt>
+<dd><p>サーバを停止する.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-doquedb.client.object">
+<span id="doquedb-client-object-module"></span><h2>doquedb.client.object module<a class="headerlink" href="#module-doquedb.client.object" title="Link to this heading"></a></h2>
+<p>object.py – doquedb.clientパッケージ共通の基底クラスの実装モジュール</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="doquedb.client.object.Object">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">doquedb.client.object.</span></span><span class="sig-name descname"><span class="pre">Object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#doquedb.client.object.Object" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>clientオブジェクト全ての基底クラス</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.object.Object.CONNECTION">
+<span class="sig-name descname"><span class="pre">CONNECTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#doquedb.client.object.Object.CONNECTION" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.object.Object.DATA_SOURCE">
+<span class="sig-name descname"><span class="pre">DATA_SOURCE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#doquedb.client.object.Object.DATA_SOURCE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.object.Object.PORT">
+<span class="sig-name descname"><span class="pre">PORT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#doquedb.client.object.Object.PORT" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.object.Object.PREPARE_STATEMENT">
+<span class="sig-name descname"><span class="pre">PREPARE_STATEMENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#doquedb.client.object.Object.PREPARE_STATEMENT" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.object.Object.RESULT_SET">
+<span class="sig-name descname"><span class="pre">RESULT_SET</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#doquedb.client.object.Object.RESULT_SET" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.object.Object.SESSION">
+<span class="sig-name descname"><span class="pre">SESSION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#doquedb.client.object.Object.SESSION" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.object.Object.close">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.client.object.Object.close" title="Link to this definition"></a></dt>
+<dd><p>クローズする.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="doquedb.client.object.Object.type">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#doquedb.client.object.Object.type" title="Link to this definition"></a></dt>
+<dd><p>typeのゲッター.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-doquedb.client.port">
+<span id="doquedb-client-port-module"></span><h2>doquedb.client.port module<a class="headerlink" href="#module-doquedb.client.port" title="Link to this heading"></a></h2>
+<p>port.py – クライアントポート</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="doquedb.client.port.Port">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">doquedb.client.port.</span></span><span class="sig-name descname"><span class="pre">Port</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hostname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">portnum</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">protocol_ver</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slave_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#doquedb.client.port.Port" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#doquedb.client.object.Object" title="doquedb.client.object.Object"><code class="xref py py-class docutils literal notranslate"><span class="pre">Object</span></code></a></p>
+<p>クライアントポートクラス.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hostname</strong> (<em>str</em>) – ホスト名</p></li>
+<li><p><strong>portnum</strong> (<em>int</em>) – ポート番号</p></li>
+<li><p><strong>protocol_ver</strong> (<em>int</em>) – プロトコルバージョン（=マスターID）</p></li>
+<li><p><strong>slave_id</strong> (<em>int</em>) – スレーブID</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">__connection</span> <span class="pre">(</span></span></dt>
+<dd><p>obj: <cite>port.Connection</cite>): コネクション</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.port.Port.__worker_id">
+<span class="sig-name descname"><span class="pre">__worker_id</span></span><a class="headerlink" href="#doquedb.client.port.Port.__worker_id" title="Link to this definition"></a></dt>
+<dd><p>ワーカのID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.port.Port.__reuse">
+<span class="sig-name descname"><span class="pre">__reuse</span></span><a class="headerlink" href="#doquedb.client.port.Port.__reuse" title="Link to this definition"></a></dt>
+<dd><p>エラー時に再利用可能かどうか</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="doquedb.client.port.Port.authorization">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">authorization</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#doquedb.client.port.Port.authorization" title="Link to this definition"></a></dt>
+<dd><p>認証方式のゲッター.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.port.Port.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.client.port.Port.close" title="Link to this definition"></a></dt>
+<dd><p>ポートのクローズ.</p>
+<p>port.Connectionのクローズ.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.port.Port.flush">
+<span class="sig-name descname"><span class="pre">flush</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.client.port.Port.flush" title="Link to this definition"></a></dt>
+<dd><p>出力をflushする.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="doquedb.client.port.Port.is_reuse">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_reuse</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#doquedb.client.port.Port.is_reuse" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="doquedb.client.port.Port.master_id">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">master_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#doquedb.client.port.Port.master_id" title="Link to this definition"></a></dt>
+<dd><p>マスターIDのゲッター.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.port.Port.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.client.port.Port.open" title="Link to this definition"></a></dt>
+<dd><p>ポートのオープン.</p>
+<p>port.Connectionのオープン.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.port.Port.read_integerdata">
+<span class="sig-name descname"><span class="pre">read_integerdata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="doquedb.common.html#doquedb.common.scalardata.IntegerData" title="doquedb.common.scalardata.IntegerData"><span class="pre">IntegerData</span></a></span></span><a class="headerlink" href="#doquedb.client.port.Port.read_integerdata" title="Link to this definition"></a></dt>
+<dd><p>IntegerDataを読込む.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>読込んだIntegerData</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="doquedb.common.html#doquedb.common.scalardata.IntegerData" title="doquedb.common.scalardata.IntegerData">IntegerData</a></p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="doquedb.html#doquedb.OperationalError" title="doquedb.OperationalError"><strong>OperationalError</strong></a> – 読込んだObjectがIntegerDataではなかった場合</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.port.Port.read_object">
+<span class="sig-name descname"><span class="pre">read_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="doquedb.common.html#doquedb.common.serializable.Serializable" title="doquedb.common.serializable.Serializable"><span class="pre">Serializable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="doquedb.common.html#doquedb.common.serializable.Serializable" title="doquedb.common.serializable.Serializable"><span class="pre">Serializable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.client.port.Port.read_object" title="Link to this definition"></a></dt>
+<dd><p>オブジェクトを読み込む.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference internal" href="doquedb.common.html#doquedb.common.serializable.Serializable" title="doquedb.common.serializable.Serializable"><em>Serializable</em></a>) – データを格納するSerializableクラス</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>読み込んだオブジェクト</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="doquedb.common.html#doquedb.common.serializable.Serializable" title="doquedb.common.serializable.Serializable">Serializable</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>DataBaseError</strong> – データベース側が例外を返してきた場合</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.port.Port.read_status">
+<span class="sig-name descname"><span class="pre">read_status</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#doquedb.client.port.Port.read_status" title="Link to this definition"></a></dt>
+<dd><p>Statusを読込む.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>読込んだStatusのタイプ</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="doquedb.html#doquedb.OperationalError" title="doquedb.OperationalError"><strong>OperationalError</strong></a> – 読込んだObjectがStatusではなかった場合</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.port.Port.read_stringdata">
+<span class="sig-name descname"><span class="pre">read_stringdata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="doquedb.common.html#doquedb.common.scalardata.StringData" title="doquedb.common.scalardata.StringData"><span class="pre">StringData</span></a></span></span><a class="headerlink" href="#doquedb.client.port.Port.read_stringdata" title="Link to this definition"></a></dt>
+<dd><p>StringDataを読込む.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>読込んだStringData</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="doquedb.common.html#doquedb.common.scalardata.StringData" title="doquedb.common.scalardata.StringData">StringData</a></p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="doquedb.html#doquedb.OperationalError" title="doquedb.OperationalError"><strong>OperationalError</strong></a> – 読込んだObjectがStringDataではなかった場合</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.port.Port.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#doquedb.client.port.Port.reset" title="Link to this definition"></a></dt>
+<dd><p>再利用するためにリセットする.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="doquedb.client.port.Port.slave_id">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">slave_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#doquedb.client.port.Port.slave_id" title="Link to this definition"></a></dt>
+<dd><p>スレーブIDのゲッター.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="doquedb.client.port.Port.worker_id">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">worker_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#doquedb.client.port.Port.worker_id" title="Link to this definition"></a></dt>
+<dd><p>ワーカIDのゲッター</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.port.Port.write_object">
+<span class="sig-name descname"><span class="pre">write_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="doquedb.common.html#doquedb.common.serializable.Serializable" title="doquedb.common.serializable.Serializable"><span class="pre">Serializable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.client.port.Port.write_object" title="Link to this definition"></a></dt>
+<dd><p>オブジェクトを書き出す.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>object</strong> (<a class="reference internal" href="doquedb.common.html#doquedb.common.serializable.Serializable" title="doquedb.common.serializable.Serializable"><em>Serializable</em></a>) – 書き出すオブジェクト</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-doquedb.client.prepare_statement">
+<span id="doquedb-client-prepare-statement-module"></span><h2>doquedb.client.prepare_statement module<a class="headerlink" href="#module-doquedb.client.prepare_statement" title="Link to this heading"></a></h2>
+<p>prepare_statement.py – クライアントのプリペアステートメント</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="doquedb.client.prepare_statement.PrepareStatement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">doquedb.client.prepare_statement.</span></span><span class="sig-name descname"><span class="pre">PrepareStatement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prepare_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#doquedb.client.prepare_statement.PrepareStatement" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#doquedb.client.object.Object" title="doquedb.client.object.Object"><code class="xref py py-class docutils literal notranslate"><span class="pre">Object</span></code></a></p>
+<p>プリペアステートメントクラス</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>prepare_id</strong> – プリペアID</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.prepare_statement.PrepareStatement.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#doquedb.client.session.Session" title="doquedb.client.session.Session"><span class="pre">Session</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.client.prepare_statement.PrepareStatement.close" title="Link to this definition"></a></dt>
+<dd><p>プリペアステートメントのクローズ</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.prepare_statement.PrepareStatement.create">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#doquedb.client.session.Session" title="doquedb.client.session.Session"><span class="pre">Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">statement</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#doquedb.client.prepare_statement.PrepareStatement" title="doquedb.client.prepare_statement.PrepareStatement"><span class="pre">PrepareStatement</span></a></span></span><a class="headerlink" href="#doquedb.client.prepare_statement.PrepareStatement.create" title="Link to this definition"></a></dt>
+<dd><p>プリペアステートメントを作成する.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>session</strong> (<a class="reference internal" href="#doquedb.client.session.Session" title="doquedb.client.session.Session"><em>Session</em></a>) – セッション</p></li>
+<li><p><strong>statement</strong> (<em>str</em>) – SQL文</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>作成したプリペアステートメント</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#doquedb.client.prepare_statement.PrepareStatement" title="doquedb.client.prepare_statement.PrepareStatement">PrepareStatement</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.prepare_statement.PrepareStatement.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#doquedb.client.session.Session" title="doquedb.client.session.Session"><span class="pre">Session</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="doquedb.common.html#doquedb.common.arraydata.DataArrayData" title="doquedb.common.arraydata.DataArrayData"><span class="pre">DataArrayData</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#doquedb.client.resultset.ResultSet" title="doquedb.client.resultset.ResultSet"><span class="pre">ResultSet</span></a></span></span><a class="headerlink" href="#doquedb.client.prepare_statement.PrepareStatement.execute" title="Link to this definition"></a></dt>
+<dd><p>プリペアードステートメントの実行</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parameter</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="doquedb.common.html#doquedb.common.arraydata.DataArrayData" title="doquedb.common.arraydata.DataArrayData"><em>DataArrayData</em></a><em>]</em>) – パラメータ</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>リザルトセット</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#doquedb.client.resultset.ResultSet" title="doquedb.client.resultset.ResultSet">ResultSet</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="doquedb.client.prepare_statement.PrepareStatement.prepare_id">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">prepare_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#doquedb.client.prepare_statement.PrepareStatement.prepare_id" title="Link to this definition"></a></dt>
+<dd><p>プリペアIDのゲッター</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-doquedb.client.resultset">
+<span id="doquedb-client-resultset-module"></span><h2>doquedb.client.resultset module<a class="headerlink" href="#module-doquedb.client.resultset" title="Link to this heading"></a></h2>
+<p>resultset.py – クライアントリザルトセット</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="doquedb.client.resultset.ResultSet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">doquedb.client.resultset.</span></span><span class="sig-name descname"><span class="pre">ResultSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datasource</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#doquedb.client.datasource.DataSource" title="doquedb.client.datasource.DataSource"><span class="pre">DataSource</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#doquedb.client.port.Port" title="doquedb.client.port.Port"><span class="pre">Port</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#doquedb.client.resultset.ResultSet" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#doquedb.client.object.Object" title="doquedb.client.object.Object"><code class="xref py py-class docutils literal notranslate"><span class="pre">Object</span></code></a></p>
+<p>リザルトセットクラス.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>(</strong> (<em>port</em>) – obj: <cite>DataSource</cite>): データソース</p></li>
+<li><p><strong>(</strong> – obj: <cite>Port</cite>):　通信ポート</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">__datasource</span> <span class="pre">(</span></span></dt>
+<dd><p>obj: <cite>DataSource</cite>): データソース</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">__port</span> <span class="pre">(</span></span></dt>
+<dd><p>obj: <cite>Port</cite>): 通信ポート</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.resultset.ResultSet.__status">
+<span class="sig-name descname"><span class="pre">__status</span></span><a class="headerlink" href="#doquedb.client.resultset.ResultSet.__status" title="Link to this definition"></a></dt>
+<dd><p>通信のステータス</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">__metadata</span> <span class="pre">(</span></span></dt>
+<dd><p>obj: <cite>ResultSetMetaData</cite>): リザルトセットのメタデータ</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">__tupledata</span> <span class="pre">(</span></span></dt>
+<dd><p>obj: <cite>DataArrayData</cite>): 一行のデータ</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">__status</span></span><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd><p>現在のステータス</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">__row</span> <span class="pre">(</span></span></dt>
+<dd><p>obj: <cite>DataArrayData</cite>): リザルトセットの現在の行データ</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.resultset.ResultSet.__rowcount">
+<span class="sig-name descname"><span class="pre">__rowcount</span></span><a class="headerlink" href="#doquedb.client.resultset.ResultSet.__rowcount" title="Link to this definition"></a></dt>
+<dd><p>現在の行番号</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.resultset.ResultSet.__is_closed">
+<span class="sig-name descname"><span class="pre">__is_closed</span></span><a class="headerlink" href="#doquedb.client.resultset.ResultSet.__is_closed" title="Link to this definition"></a></dt>
+<dd><p>クローズフラグ</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.resultset.ResultSet.cancel">
+<span class="sig-name descname"><span class="pre">cancel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.client.resultset.ResultSet.cancel" title="Link to this definition"></a></dt>
+<dd><p>実行をキャンセルする.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.resultset.ResultSet.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.client.resultset.ResultSet.close" title="Link to this definition"></a></dt>
+<dd><p>リザルトセットのクローズ.</p>
+<p class="rubric">Notes</p>
+<p>ゴミが残らないよう, 実行ステータスを得るまで結果を取得.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.resultset.ResultSet.get_next_tuple">
+<span class="sig-name descname"><span class="pre">get_next_tuple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tuple_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="doquedb.common.html#doquedb.common.arraydata.DataArrayData" title="doquedb.common.arraydata.DataArrayData"><span class="pre">DataArrayData</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#doquedb.client.resultset.ResultSet.get_next_tuple" title="Link to this definition"></a></dt>
+<dd><p>次のタプルデータを読む.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tuple</strong> (<em>Optional</em><em>[</em><em>[</em><a class="reference internal" href="doquedb.common.html#doquedb.common.arraydata.DataArrayData" title="doquedb.common.arraydata.DataArrayData"><em>DataArrayData</em></a><em>]</em>) – 読み込んだタプルデータ</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>実行ステータス</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.resultset.ResultSet.get_row_as_tuple">
+<span class="sig-name descname"><span class="pre">get_row_as_tuple</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.client.resultset.ResultSet.get_row_as_tuple" title="Link to this definition"></a></dt>
+<dd><p>行データをリストに変換して取得する</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.resultset.ResultSet.get_status">
+<span class="sig-name descname"><span class="pre">get_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">skip_all</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#doquedb.client.resultset.ResultSet.get_status" title="Link to this definition"></a></dt>
+<dd><p>実行ステータスを得る.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>skipAll</strong> (<em>bool</em>) – True   複文の全ての結果を読み捨てる
+False  複文の1文の結果のみ読み捨てる</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>実行ステータスのみを返す。サーバからデータを受け取っても読み捨てる。</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="doquedb.client.resultset.ResultSet.is_closed">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_closed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#doquedb.client.resultset.ResultSet.is_closed" title="Link to this definition"></a></dt>
+<dd><p><a href="#id1"><span class="problematic" id="id2">`</span></a>ResultSet`を閉じたかどうか</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>obj</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="doquedb.client.resultset.ResultSet.last_status">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">last_status</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#doquedb.client.resultset.ResultSet.last_status" title="Link to this definition"></a></dt>
+<dd><p>最後に取得した実行ステータスを得る</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="doquedb.client.resultset.ResultSet.metadata">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">metadata</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="doquedb.common.html#doquedb.common.arraydata.ResultSetMetaData" title="doquedb.common.arraydata.ResultSetMetaData"><span class="pre">ResultSetMetaData</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#doquedb.client.resultset.ResultSet.metadata" title="Link to this definition"></a></dt>
+<dd><p>メタデータのゲッター</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.resultset.ResultSet.next">
+<span class="sig-name descname"><span class="pre">next</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#doquedb.client.resultset.ResultSet.next" title="Link to this definition"></a></dt>
+<dd><p>リザルトセットを１行読込み、カーソルを１行下に移動する.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>True  成功</dt><dd><p>False 失敗</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="doquedb.exception.html#doquedb.exception.database_exceptions.ClassNotFound" title="doquedb.exception.database_exceptions.ClassNotFound"><strong>ClassNotFound</strong></a> – Class定義が見つからなかった場合</p></li>
+<li><p><a class="reference internal" href="doquedb.exception.html#doquedb.exception.database_exceptions.ConnectionRanOut" title="doquedb.exception.database_exceptions.ConnectionRanOut"><strong>ConnectionRanOut</strong></a> – 通信でエラーが発生した場合</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>カーソルは初期状態では最初の行の前に位置する.呼び出しによって、最初の行が現在の行になる.
+2 番目の呼び出しによって 2 行目が現在の行になり、以降同様に続く.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="doquedb.client.resultset.ResultSet.row">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">row</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="doquedb.common.html#doquedb.common.arraydata.DataArrayData" title="doquedb.common.arraydata.DataArrayData"><span class="pre">DataArrayData</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#doquedb.client.resultset.ResultSet.row" title="Link to this definition"></a></dt>
+<dd><p>行データのゲッター</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="doquedb.client.resultset.ResultSet.rowcount">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rowcount</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#doquedb.client.resultset.ResultSet.rowcount" title="Link to this definition"></a></dt>
+<dd><p>行データのゲッター</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-doquedb.client.session">
+<span id="doquedb-client-session-module"></span><h2>doquedb.client.session module<a class="headerlink" href="#module-doquedb.client.session" title="Link to this heading"></a></h2>
+<p>session.py – クライアントセッション</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="doquedb.client.session.Session">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">doquedb.client.session.</span></span><span class="sig-name descname"><span class="pre">Session</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datasource</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#doquedb.client.datasource.DataSource" title="doquedb.client.datasource.DataSource"><span class="pre">DataSource</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">session_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#doquedb.client.session.Session" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#doquedb.client.object.Object" title="doquedb.client.object.Object"><code class="xref py py-class docutils literal notranslate"><span class="pre">Object</span></code></a></p>
+<p>セッションクラス.</p>
+<p>コネクションに対してセッションを作成する。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>(</strong> (<em>datasource</em>) – obj: <cite>DataSource</cite>): データソース</p></li>
+<li><p><strong>dbname</strong> (<em>str</em>) – データベース名</p></li>
+<li><p><strong>username</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – ユーザー名</p></li>
+<li><p><strong>session_id</strong> (<em>int</em>) – セッションID</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">__datasource</span> <span class="pre">(</span></span></dt>
+<dd><p>obj: <cite>DataSource</cite>): データソース</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.session.Session.__dbname">
+<span class="sig-name descname"><span class="pre">__dbname</span></span><a class="headerlink" href="#doquedb.client.session.Session.__dbname" title="Link to this definition"></a></dt>
+<dd><p>データベース名</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.session.Session.__username">
+<span class="sig-name descname"><span class="pre">__username</span></span><a class="headerlink" href="#doquedb.client.session.Session.__username" title="Link to this definition"></a></dt>
+<dd><p>ユーザー名</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="doquedb.client.session.Session.__session_id">
+<span class="sig-name descname"><span class="pre">__session_id</span></span><a class="headerlink" href="#doquedb.client.session.Session.__session_id" title="Link to this definition"></a></dt>
+<dd><p>セッションID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.session.Session.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#doquedb.client.session.Session.close" title="Link to this definition"></a></dt>
+<dd><p>セッションのクローズ.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.session.Session.close_internal">
+<span class="sig-name descname"><span class="pre">close_internal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#doquedb.client.session.Session.close_internal" title="Link to this definition"></a></dt>
+<dd><p>クローズする.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>セッションID</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>このメソッドは例外を送出しない.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.session.Session.close_prepare">
+<span class="sig-name descname"><span class="pre">close_prepare</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#doquedb.client.session.Session.close_prepare" title="Link to this definition"></a></dt>
+<dd><p>プリペアステートメントのクローズ</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.session.Session.create_prepare_statement">
+<span class="sig-name descname"><span class="pre">create_prepare_statement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">statement</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#doquedb.client.prepare_statement.PrepareStatement" title="doquedb.client.prepare_statement.PrepareStatement"><span class="pre">PrepareStatement</span></a></span></span><a class="headerlink" href="#doquedb.client.session.Session.create_prepare_statement" title="Link to this definition"></a></dt>
+<dd><p>新しくプリペアステートメントを作成する.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>statement</strong> (<em>str</em>) – SQL文</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="doquedb.exception.html#doquedb.exception.database_exceptions.ClassNotFound" title="doquedb.exception.database_exceptions.ClassNotFound"><strong>ClassNotFound</strong></a> – 指定したIDを持つクラスがない</p></li>
+<li><p><a class="reference internal" href="doquedb.html#doquedb.DatabaseError" title="doquedb.DatabaseError"><strong>DatabaseError</strong></a> – DoqueDBから返却されたエラー</p></li>
+<li><p><strong>Exception</strong> – その他IOErrorなどpythonのシステムエラー</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>新しく作成したプリペアステートメント</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#doquedb.client.prepare_statement.PrepareStatement" title="doquedb.client.prepare_statement.PrepareStatement">PrepareStatement</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="doquedb.client.session.Session.datasource">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">datasource</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#doquedb.client.datasource.DataSource" title="doquedb.client.datasource.DataSource"><span class="pre">DataSource</span></a></em><a class="headerlink" href="#doquedb.client.session.Session.datasource" title="Link to this definition"></a></dt>
+<dd><p>データソースのゲッター</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="doquedb.client.session.Session.dbname">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dbname</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#doquedb.client.session.Session.dbname" title="Link to this definition"></a></dt>
+<dd><p>データベース名のゲッター</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.session.Session.erase_prepare_statement">
+<span class="sig-name descname"><span class="pre">erase_prepare_statement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prepare_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#doquedb.client.session.Session.erase_prepare_statement" title="Link to this definition"></a></dt>
+<dd><p>プリペアステートメントを削除する</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>prepare_id</strong> (<em>int</em>) – プリペアステートメントID</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="doquedb.exception.html#doquedb.exception.database_exceptions.ClassNotFound" title="doquedb.exception.database_exceptions.ClassNotFound"><strong>ClassNotFound</strong></a> – 指定したIDを持つクラスがない</p></li>
+<li><p><a class="reference internal" href="doquedb.html#doquedb.DatabaseError" title="doquedb.DatabaseError"><strong>DatabaseError</strong></a> – DoqueDBから返却されたエラー</p></li>
+<li><p><strong>Exception</strong> – その他IOErrorなどpythonのシステムエラー</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.session.Session.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">statement</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="doquedb.common.html#doquedb.common.arraydata.DataArrayData" title="doquedb.common.arraydata.DataArrayData"><span class="pre">DataArrayData</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#doquedb.client.resultset.ResultSet" title="doquedb.client.resultset.ResultSet"><span class="pre">ResultSet</span></a></span></span><a class="headerlink" href="#doquedb.client.session.Session.execute" title="Link to this definition"></a></dt>
+<dd><p>オペレーションを実行する.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>operation</strong> (<em>str</em>) – 実行するSQL文.</p></li>
+<li><p><strong>param_sets</strong> (<em>list</em>) – SQL文に埋め込むパラメータのシーケンスのシーケンス.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>resultset</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Exception</strong> – IOErrorなどpythonのシステムエラー</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.session.Session.execute_prepare">
+<span class="sig-name descname"><span class="pre">execute_prepare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prepare</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#doquedb.client.prepare_statement.PrepareStatement" title="doquedb.client.prepare_statement.PrepareStatement"><span class="pre">PrepareStatement</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="doquedb.common.html#doquedb.common.arraydata.DataArrayData" title="doquedb.common.arraydata.DataArrayData"><span class="pre">DataArrayData</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#doquedb.client.resultset.ResultSet" title="doquedb.client.resultset.ResultSet"><span class="pre">ResultSet</span></a></span></span><a class="headerlink" href="#doquedb.client.session.Session.execute_prepare" title="Link to this definition"></a></dt>
+<dd><p>プリペアしたSQL文を実行する.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prepare</strong> (<a class="reference internal" href="#doquedb.client.prepare_statement.PrepareStatement" title="doquedb.client.prepare_statement.PrepareStatement"><em>PrepareStatement</em></a>) – プリぺステートメント</p></li>
+<li><p><strong>parameter</strong> (<a class="reference internal" href="doquedb.common.html#doquedb.common.arraydata.DataArrayData" title="doquedb.common.arraydata.DataArrayData"><em>DataArrayData</em></a>) – パラメータ</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>Exception</strong> – IOErrorなどpythonのシステムエラー</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>リザルトセット</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#doquedb.client.resultset.ResultSet" title="doquedb.client.resultset.ResultSet">ResultSet</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="doquedb.client.session.Session.get_database_product_ver">
+<span class="sig-name descname"><span class="pre">get_database_product_ver</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#doquedb.client.session.Session.get_database_product_ver" title="Link to this definition"></a></dt>
+<dd><p>データベース製品のバージョンを取得する.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>データベースのバージョン</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="doquedb.client.session.Session.id_">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">id_</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#doquedb.client.session.Session.id_" title="Link to this definition"></a></dt>
+<dd><p>セッションIDのゲッター</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="doquedb.client.session.Session.is_valid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_valid</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#doquedb.client.session.Session.is_valid" title="Link to this definition"></a></dt>
+<dd><p>セッションが有効かどうか</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="doquedb.client.session.Session.prepared_map">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">prepared_map</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#doquedb.client.prepare_statement.PrepareStatement" title="doquedb.client.prepare_statement.PrepareStatement"><span class="pre">PrepareStatement</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#doquedb.client.session.Session.prepared_map" title="Link to this definition"></a></dt>
+<dd><p>プリペアステートメントのマップのゲッター</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="doquedb.client.session.Session.username">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">username</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#doquedb.client.session.Session.username" title="Link to this definition"></a></dt>
+<dd><p>ユーザー名のゲッター</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-doquedb.client">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-doquedb.client" title="Link to this heading"></a></h2>
+<p>client – クライアント機能パッケージ</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="doquedb.html" class="btn btn-neutral float-left" title="doquedb package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="doquedb.common.html" class="btn btn-neutral float-right" title="doquedb.common package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Ricoh Company, Ltd.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

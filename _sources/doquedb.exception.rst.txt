@@ -1,0 +1,69 @@
+doquedb.exception package
+=========================
+
+Submodules
+----------
+
+doquedb.exception.database\_exceptions module
+---------------------------------------------
+
+.. automodule:: doquedb.exception.database_exceptions
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+doquedb.exception.error\_message module
+---------------------------------------
+
+.. automodule:: doquedb.exception.error_message
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+doquedb.exception.errorcode module
+----------------------------------
+
+.. automodule:: doquedb.exception.errorcode
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+doquedb.exception.exceptions module
+-----------------------------------
+
+.. automodule:: doquedb.exception.exceptions
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+doquedb.exception.message\_format\_eg module
+--------------------------------------------
+
+.. automodule:: doquedb.exception.message_format_eg
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+doquedb.exception.message\_format\_jp module
+--------------------------------------------
+
+.. automodule:: doquedb.exception.message_format_jp
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+doquedb.exception.raise\_error module
+-------------------------------------
+
+.. automodule:: doquedb.exception.raise_error
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: doquedb.exception
+   :members:
+   :undoc-members:
+   :show-inheritance:
